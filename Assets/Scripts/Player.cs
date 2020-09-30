@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     private bool isGrounded = true;
 
-    private float currentPlayTime;
+    private float currentPlayTime; // PascalCase
     private bool isPlaying = true;
 
     private int totalTargets;
@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
 
     private Rigidbody myRigidbody;
     private MeshRenderer mesh;
+
+    public int Score { get => score; } // CamelCase
+    public bool IsPlaying { get => isPlaying; }
 
     // Start is called before the first frame update
     private void Start()
@@ -51,7 +54,7 @@ public class Player : MonoBehaviour
         InvokeRepeating("PrintPlayTime", 0F, 1F);
     }
 
-    private void PrintPlayTime()
+    private void PrintPlayTime() // CamelCase
     {
         print(currentPlayTime);
     }
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour
     private void StopGame(bool wonGame = false)
     {
         enabled = false;
+        isPlaying = false;
         CancelInvoke("PrintPlayTime");
         print(wonGame ? "You Win" : "Game Over");
 
