@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     public int Score { get => score; } // CamelCase
     public bool IsPlaying { get => isPlaying; }
+    public float CurrentPlayTime { get => currentPlayTime; }
 
     // Start is called before the first frame update
     private void Start()

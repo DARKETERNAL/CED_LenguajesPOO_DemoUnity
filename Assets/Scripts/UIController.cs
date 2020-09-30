@@ -13,6 +13,9 @@ public class UIController : MonoBehaviour
     private Text scoreLabel;
 
     [SerializeField]
+    private Text playTimeLabel;
+
+    [SerializeField]
     private Text endGameLabel;
 
     [SerializeField]
@@ -29,11 +32,12 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (player != null && scoreLabel != null)
+        if (player != null && scoreLabel != null && playTimeLabel != null)
         {
             if (player.IsPlaying)
             {
                 scoreLabel.text = player.Score.ToString();
+                playTimeLabel.text = player.CurrentPlayTime.ToString();
             }
             else
             {
