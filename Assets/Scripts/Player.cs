@@ -60,6 +60,11 @@ public class Player : MonoBehaviour
         print(currentPlayTime);
     }
 
+    public void AddPlayTime(float value)
+    {
+        currentPlayTime += value;
+    }
+
     public void AddScore()
     {
         score += 1;
