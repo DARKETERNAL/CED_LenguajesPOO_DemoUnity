@@ -24,6 +24,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private Button restartBtn;
 
+    [SerializeField]
+    private Slider timerFillBar;
+
     public void RestartLevel()
     {
         SceneManager.LoadScene("TestExample", LoadSceneMode.Single);
@@ -45,12 +48,22 @@ public class UIController : MonoBehaviour
 
                 playTimeLabel.text = string.Format("{0:00}:{1:00}", mins, secs);
 
+                if (timerFillBar != null)
+                {
+                    timerFillBar.value = player.CurrentPlayTime / player.playTime; 
+                }
+
                 //playTimeLabel.text = player.CurrentPlayTime.ToString(@"hh\:mm\:ss");
             }
             else
             {
-
                 playTimeLabel.text = "00:00";
+
+                if (timerFillBar != null)
+                {
+                    timerFillBar.fillRect.gameObject.SetActive(false);
+                }
+
                 scoreLabel.gameObject.SetActive(false);
 
                 if (endGameBG != null && endGameLabel != null && restartBtn != null)
