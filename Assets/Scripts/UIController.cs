@@ -37,10 +37,20 @@ public class UIController : MonoBehaviour
             if (player.IsPlaying)
             {
                 scoreLabel.text = player.Score.ToString();
-                playTimeLabel.text = player.CurrentPlayTime.ToString();
+
+                //Mathf.CeilToInt(player.CurrentPlayTime)
+
+                int mins = Mathf.CeilToInt(player.CurrentPlayTime) / 60; // 2
+                int secs = Mathf.CeilToInt(player.CurrentPlayTime) % 60; // 5
+
+                playTimeLabel.text = string.Format("{0:00}:{1:00}", mins, secs);
+
+                //playTimeLabel.text = player.CurrentPlayTime.ToString(@"hh\:mm\:ss");
             }
             else
             {
+
+                playTimeLabel.text = "00:00";
                 scoreLabel.gameObject.SetActive(false);
 
                 if (endGameBG != null && endGameLabel != null && restartBtn != null)
