@@ -19,6 +19,9 @@ public class TimePickup : MonoBehaviour
         {
             // Sumar tiempo de juego
             player.AddPlayTime(timeToAdd);
+
+            GameObject.FindGameObjectWithTag("PickupSFX").GetComponent<AudioSource>().Play();
+
             Destroy(gameObject);
         }
     }
