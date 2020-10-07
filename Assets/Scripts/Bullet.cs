@@ -6,8 +6,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Target")))
         {
-            Destroy(collision.gameObject);
-
             Player player = FindObjectOfType<Player>();
 
             if (player != null)

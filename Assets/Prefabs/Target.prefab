@@ -107,4 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54ccb6c2061ee64cbf014b3909bea50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionSFX: {fileID: 1173534896594329004, guid: 44c5188e5e524994fb382b4631faaa3e,
+    type: 3}
   rotationSpeed: 20
