@@ -107,3 +107,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToAdd: 5
+  pickupVFX: {fileID: 5845023258028682796, guid: ec88de9ac7cb4b64c9f0903835ad97f0,
+    type: 3}

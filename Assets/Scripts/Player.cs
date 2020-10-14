@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [Header("Game")]
     public float playTime = 180F;
 
+    [Header("VFX")]
+    public ParticleSystem pickupVFX;
+
     private float rotationFactor = 3F;
     private float currentRunFactor;
     private float currentRotFactor;
@@ -72,6 +75,14 @@ public class Player : MonoBehaviour
         if (score == totalTargets)
         {
             StopGame(true);
+        }
+    }
+
+    public void PlayPickupVFX()
+    {
+        if (pickupVFX != null)
+        {
+            pickupVFX.Play();
         }
     }
 
