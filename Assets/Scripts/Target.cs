@@ -5,6 +5,9 @@ public class Target : MonoBehaviour
     [SerializeField]
     private AudioSource destructionSFX;
 
+    [SerializeField]
+    private ParticleSystem destructionVFX;
+
     public float rotationSpeed = 5F;
 
     // Update is called once per frame
@@ -15,7 +18,16 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Instantiate<AudioSource>(destructionSFX, transform.position, Quaternion.identity).Play();
+        if (destructionSFX != null)
+        {
+            Instantiate<AudioSource>(destructionSFX, transform.position, Quaternion.identity).Play(); 
+        }
+
+        if (destructionVFX != null)
+        {
+            Instantiate(destructionVFX, transform.position, transform.rotation); 
+        }
+        
         Destroy(gameObject);
     }
 }
