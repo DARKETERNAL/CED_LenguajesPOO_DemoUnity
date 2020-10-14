@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     private float currentPlayTime; // PascalCase
     private bool isPlaying = true;
 
+    private int totalKeys = 0;
+
     private int totalTargets;
     private int score;
 
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour
     public int Score { get => score; } // CamelCase
     public bool IsPlaying { get => isPlaying; }
     public float CurrentPlayTime { get => currentPlayTime; }
+    public int TotalKeys { get => totalKeys; }
 
     // Start is called before the first frame update
     private void Start()
@@ -84,6 +87,11 @@ public class Player : MonoBehaviour
         {
             pickupVFX.Play();
         }
+    }
+
+    public void AddKey(int val)
+    {
+        totalKeys += val;
     }
 
     private void StopGame(bool wonGame = false)

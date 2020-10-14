@@ -15,7 +15,7 @@ public class TimePickup : MonoBehaviour
         Player player = other.gameObject.GetComponent<Player>();
 
         // Detectar si el jugador colisiona con este objeto
-        if (player != null)
+        if (player != null && player.TotalKeys >= 3)
         {
             // Sumar tiempo de juego
             player.AddPlayTime(timeToAdd);
