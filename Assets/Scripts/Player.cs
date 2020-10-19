@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public float playTime = 180F;
 
     [Header("VFX")]
-    public ParticleSystem pickupVFX;
+    public ParticleSystem pickupVFX;    
 
     private float rotationFactor = 3F;
     private float currentRunFactor;
@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     private Rigidbody myRigidbody;
     private MeshRenderer mesh;
 
+    private Animator animator;
+
     public int Score { get => score; } // CamelCase
     public bool IsPlaying { get => isPlaying; }
     public float CurrentPlayTime { get => currentPlayTime; }
@@ -50,6 +52,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         ResetMovementFactors();
 
         currentPlayTime = playTime;
@@ -145,6 +149,11 @@ public class Player : MonoBehaviour
             //WS: Movimiento adelante/atrás
             verticalValue = Input.GetAxis("Vertical");
 
+            if (animator != null)
+            {
+                animator.SetFloat("Speed", verticalValue);
+            }
+
             if (verticalValue != 0F)
             {
                 //myRigidbody.AddForce(transform.forward * movementSpeed * currentRunFactor * verticalValue * Time.deltaTime);
@@ -163,6 +172,18 @@ public class Player : MonoBehaviour
             {
                 isGrounded = false;
                 myRigidbody.AddForce(transform.up * jumpFactor, ForceMode.Impulse);
+
+                if (animator != null)
+                {
+                    animator.SetBool("Jumping", true);
+                }
+            }
+            else
+            {
+                if (animator != null)
+                {
+                    animator.SetBool("Jumping", false);
+                }
             }
 
             if (Input.GetButtonUp("Fire1"))
