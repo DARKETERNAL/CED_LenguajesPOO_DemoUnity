@@ -3,12 +3,7 @@
 public class TimePickup : MonoBehaviour
 {
     [SerializeField]
-    private float timeToAdd = 5F;
-
-    private void Update()
-    {
-        transform.RotateAround(transform.position, Vector3.up, 10F * Time.deltaTime);
-    }
+    private float timeToAdd = 5F;    
 
     private void OnTriggerEnter(Collider other)
     {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3166741678698429715}
   - component: {fileID: 5798574025555819435}
   - component: {fileID: 6680748825614833572}
+  - component: {fileID: 1951851918}
   m_Layer: 0
   m_Name: TimePickup
   m_TagString: Untagged
@@ -107,5 +108,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToAdd: 5
-  pickupVFX: {fileID: 5845023258028682796, guid: ec88de9ac7cb4b64c9f0903835ad97f0,
-    type: 3}
+--- !u!95 &1951851918
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337122204146123564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a005f4c234ea97346b20de8af7ea862a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
